@@ -51,7 +51,7 @@
     });
   });
 
-  // ================== NUEVA GALERÍA CON PESTAÑAS (TOGGLE) ==================
+  // ================== GALERÍA CON PESTAÑAS (TOGGLE) ==================
   const galleryTabs = document.querySelectorAll('.gallery-tab');
   const galleryPanels = document.querySelectorAll('.gallery-panel');
   
@@ -80,6 +80,28 @@
     });
   });
 
+  // ================== NUEVA SECCIÓN GUERRAS (TOGGLES) ==================
+  const warToggles = document.querySelectorAll('.war-toggle-btn');
+  
+  warToggles.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Buscar el panel asociado (hermano siguiente o dentro del mismo war-section)
+      const warSection = btn.closest('.war-section');
+      const panel = warSection.querySelector('.war-panel');
+      
+      // Toggle: si el panel está activo, lo ocultamos; si no, lo mostramos
+      if (panel.classList.contains('active')) {
+        panel.classList.remove('active');
+        btn.classList.remove('active');
+        console.log(`%c[GUERRAS] Panel ocultado`, 'color: #c9a84c;');
+      } else {
+        panel.classList.add('active');
+        btn.classList.add('active');
+        console.log(`%c[GUERRAS] Panel desplegado`, 'color: #c9a84c;');
+      }
+    });
+  });
+
   // ================== MODAL PARA ID DE FREE FIRE Y WHATSAPP ==================
   const modal = document.getElementById('idModal');
   const whatsappBtn = document.getElementById('whatsappBtn');
@@ -89,7 +111,7 @@
   const ffIdInput = document.getElementById('ffIdInput');
 
   // Número de WhatsApp del líder (cambiar por el real)
-  const WA_NUMBER = "591 63790452";
+  const WA_NUMBER = "5491123456789";
 
   function openModal() {
     modal.style.display = 'flex';
@@ -102,41 +124,47 @@
     modal.style.display = 'none';
   }
 
-  whatsappBtn.addEventListener('click', openModal);
-  closeModal.addEventListener('click', closeModalFunc);
-  cancelBtn.addEventListener('click', closeModalFunc);
+  if (whatsappBtn) {
+    whatsappBtn.addEventListener('click', openModal);
+  }
+  if (closeModal) closeModal.addEventListener('click', closeModalFunc);
+  if (cancelBtn) cancelBtn.addEventListener('click', closeModalFunc);
   window.addEventListener('click', (e) => {
     if (e.target === modal) closeModalFunc();
   });
 
-  ffIdInput.addEventListener('input', () => {
-    const value = ffIdInput.value.trim();
-    const isValid = /^[a-zA-Z0-9]{10,}$/.test(value);
-    if (isValid) {
-      continueBtn.disabled = false;
-      continueBtn.classList.add('active');
-    } else {
-      continueBtn.disabled = true;
-      continueBtn.classList.remove('active');
-    }
-  });
+  if (ffIdInput) {
+    ffIdInput.addEventListener('input', () => {
+      const value = ffIdInput.value.trim();
+      const isValid = /^[a-zA-Z0-9]{10,}$/.test(value);
+      if (isValid) {
+        continueBtn.disabled = false;
+        continueBtn.classList.add('active');
+      } else {
+        continueBtn.disabled = true;
+        continueBtn.classList.remove('active');
+      }
+    });
+  }
 
-  continueBtn.addEventListener('click', () => {
-    if (continueBtn.disabled) return;
-    const userId = ffIdInput.value.trim();
-    if (!userId) return;
-    const message = `Hola, estoy interesado en unirme a Starry Sky. Ya revisé los requisitos en la web. Mi ID de Free Fire es: ${userId}. ¿Qué sigue?`;
-    const encodedMsg = encodeURIComponent(message);
-    const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodedMsg}`;
-    window.open(waUrl, '_blank');
-    closeModalFunc();
-    console.log(`%c[WHATSAPP] Enviando solicitud con ID: ${userId}`, 'color: #25D366;');
-  });
+  if (continueBtn) {
+    continueBtn.addEventListener('click', () => {
+      if (continueBtn.disabled) return;
+      const userId = ffIdInput.value.trim();
+      if (!userId) return;
+      const message = `Hola, estoy interesado en unirme a Starry Sky. Ya revisé los requisitos en la web. Mi ID de Free Fire es: ${userId}. ¿Qué sigue?`;
+      const encodedMsg = encodeURIComponent(message);
+      const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodedMsg}`;
+      window.open(waUrl, '_blank');
+      closeModalFunc();
+      console.log(`%c[WHATSAPP] Enviando solicitud con ID: ${userId}`, 'color: #25D366;');
+    });
+  }
 
   // ================== ANIMACIONES DE ENTRADA MEJORADAS ==================
   const activeView = document.querySelector('.view.active');
   if (activeView) {
-    const items = activeView.querySelectorAll('.hero, .rules-card, .rank-card, .req-box, .gallery-grid, .coming-card');
+    const items = activeView.querySelectorAll('.hero, .rules-card, .rank-card, .req-box, .gallery-grid, .coming-card, .war-section');
     items.forEach((el, idx) => {
       el.style.animationDelay = `${idx * 0.05}s`;
       el.style.animationFillMode = 'backwards';
@@ -144,7 +172,7 @@
   }
 
   if ('IntersectionObserver' in window) {
-    const fadeElements = document.querySelectorAll('.gal-slot, .rank-card, .rule-row, .gallery-card, .game-slot');
+    const fadeElements = document.querySelectorAll('.gal-slot, .rank-card, .rule-row, .gallery-card, .game-slot, .war-section');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
