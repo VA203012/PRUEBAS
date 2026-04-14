@@ -75,7 +75,7 @@ body{
 .nav-title{font-family:'Cinzel',serif;font-weight:900;font-size:1rem;letter-spacing:.1em;background:linear-gradient(120deg,var(--silver) 20%,var(--v3));-webkit-background-clip:text;background-clip:text;color:transparent}
 .nav-sub{font-size:.6rem;color:var(--mist);letter-spacing:.12em;text-transform:uppercase;margin-top:.04rem}
 
-/* BOTTOM TAB NAV */
+/* BOTTOM TAB NAV - ANIMACIÓN SECUENCIAL (sube uno, baja, luego el siguiente) */
 .bottom-nav{
   position:fixed;bottom:0;left:0;right:0;z-index:200;
   background:rgba(8,4,22,.97);
@@ -90,6 +90,40 @@ body{
   transition:color .2s;padding:.3rem .15rem;font-family:'Outfit',sans-serif;
   -webkit-tap-highlight-color:transparent;position:relative;
 }
+
+/* ANIMACIÓN SECUENCIAL - cada botón espera a que el anterior baje */
+.tab-btn {
+  animation: sequentialWave 8.0s ease-in-out infinite;
+  animation-fill-mode: both;
+}
+
+/* Delays para que suban uno después del otro */
+.tab-btn:nth-child(1) { animation-delay: 0s; }
+.tab-btn:nth-child(2) { animation-delay: 0.50s; }
+.tab-btn:nth-child(3) { animation-delay: 1.00s; }
+.tab-btn:nth-child(4) { animation-delay: 1.50s; }
+.tab-btn:nth-child(5) { animation-delay: 2.00s; }
+.tab-btn:nth-child(6) { animation-delay: 2.50s; }
+.tab-btn:nth-child(7) { animation-delay: 3.00s; }
+
+@keyframes sequentialWave {
+  0%, 100% { 
+    transform: translateY(0px); 
+    color: var(--mist);
+    text-shadow: none;
+  }
+  15%, 35% { 
+    transform: translateY(-3px); 
+    color: #c4b5fd;
+    text-shadow: 0 0 5px #a78bfa, 0 0 2px #8b5cf6;
+  }
+  50%, 100% { 
+    transform: translateY(0px); 
+    color: var(--mist);
+    text-shadow: none;
+  }
+}
+
 .tab-btn .t-icon{font-size:.9rem;font-family:monospace;line-height:1;transition:color .2s,transform .2s}
 .tab-btn .t-label{font-size:.56rem;letter-spacing:.07em;text-transform:uppercase;font-weight:600}
 .tab-btn::after{content:'';position:absolute;top:0;left:20%;right:20%;height:2px;background:linear-gradient(90deg,transparent,var(--v2),transparent);opacity:0;transition:opacity .2s;border-radius:0 0 2px 2px}
@@ -135,7 +169,7 @@ body{
 .stat-val{font-family:'Cinzel',serif;font-size:1.3rem;font-weight:900;color:var(--v3);line-height:1}
 .stat-label{font-size:.58rem;color:var(--mist);letter-spacing:.1em;text-transform:uppercase;margin-top:.22rem}
 
-/* NUEVA GALERÍA CON PESTAÑAS */
+/* GALERÍA */
 .gallery-tabs{
   display:flex;
   gap:0.8rem;
@@ -214,7 +248,107 @@ body{
   letter-spacing:0.08em;
 }
 
-/* MODAL PARA ID */
+/* SECCIÓN GUERRAS */
+.war-section {
+  margin-bottom: 1.2rem;
+}
+.war-toggle-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 60px;
+  padding: 0.85rem 1.2rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--v3);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+.war-toggle-btn:hover {
+  background: var(--card2);
+  border-color: var(--v2);
+  box-shadow: 0 0 8px var(--glow);
+}
+.war-icon {
+  font-size: 1.2rem;
+}
+.war-arrow {
+  transition: transform 0.2s ease;
+  font-size: 0.8rem;
+  color: var(--mist);
+}
+.war-toggle-btn.active .war-arrow {
+  transform: rotate(180deg);
+}
+.war-panel {
+  display: none;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  margin-top: 0.6rem;
+  padding: 1rem;
+  animation: fadeSlideUp 0.25s ease;
+}
+.war-panel.active {
+  display: block;
+}
+.war-time-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.time-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.5rem 0.8rem;
+  background: rgba(139,92,246,0.05);
+  border-radius: 40px;
+  font-size: 0.85rem;
+}
+.flag {
+  font-size: 1.2rem;
+  min-width: 32px;
+}
+.war-note {
+  font-size: 0.65rem;
+  color: var(--mist);
+  text-align: center;
+  margin-top: 0.8rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border);
+}
+.war-text-content {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--silver);
+}
+.war-text-content p {
+  margin-bottom: 0.8rem;
+}
+.war-text-content ul {
+  margin: 0.6rem 0 0.8rem 1.2rem;
+  list-style: none;
+}
+.war-text-content li {
+  margin-bottom: 0.4rem;
+  position: relative;
+}
+.war-footer-msg {
+  font-size: 0.7rem;
+  text-align: center;
+  color: var(--v2);
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* MODAL */
 .modal{
   display:none;
   position:fixed;
@@ -312,7 +446,7 @@ body{
   margin-top:1rem;
 }
 
-/* RESTO DE ESTILOS (sin cambios significativos) */
+/* RESTO DE ESTILOS */
 .s-head{display:flex;align-items:center;gap:.75rem;margin:1.2rem 0 .9rem}
 .s-head::before{content:'';display:block;width:3px;height:20px;background:linear-gradient(180deg,var(--v1),var(--v3));border-radius:3px;flex-shrink:0}
 .s-head h2{font-family:'Cinzel',serif;font-size:1.05rem;font-weight:900;letter-spacing:.06em;color:var(--silver)}
