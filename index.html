@@ -8,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-<!-- CSS EXTERNO -->
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -126,17 +125,15 @@
     </div>
   </section>
 
-  <!-- GALERIA (NUEVA: pestañas destacados/victorias) -->
+  <!-- GALERIA -->
   <section class="view" id="view-galeria">
     <div class="s-head" style="margin-top:.8rem"><h2>Galeria <span class="sym">[logros]</span></h2></div>
     
-    <!-- Botones de pestañas para galería -->
     <div class="gallery-tabs">
-      <button class="gallery-tab active" data-gallery="destacados">🌟 Jugadores de la semana</button>
-      <button class="gallery-tab" data-gallery="victorias">🏆 Victorias del clan</button>
+      <button class="gallery-tab active" data-gallery="destacados">✠ Jugadores de la semana</button>
+      <button class="gallery-tab" data-gallery="victorias">⌖ Victorias del clan</button>
     </div>
 
-    <!-- Panel de Jugadores Destacados (máximo 6 imágenes 1:1) -->
     <div class="gallery-panel active" id="gallery-destacados">
       <div class="gallery-grid">
         <div class="gallery-card"><img src="assets/player1.png" alt="Jugador 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="gallery-placeholder">🌟 Player 1</div></div>
@@ -148,7 +145,6 @@
       </div>
     </div>
 
-    <!-- Panel de Victorias (máximo 6 imágenes, formato horizontal opcional) -->
     <div class="gallery-panel" id="gallery-victorias">
       <div class="gallery-grid">
         <div class="gallery-card"><img src="assets/win1.png" alt="Victoria 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="gallery-placeholder">🏆 Booyah 1</div></div>
@@ -162,7 +158,51 @@
     <div class="gallery-note">// Los jugadores destacados rotan cada semana //</div>
   </section>
 
-  <!-- UNIRSE (con modal de ID) -->
+  <!-- GUERRAS (NUEVA SECCIÓN) -->
+  <section class="view" id="view-guerras">
+    <div class="s-head" style="margin-top:.8rem"><h2>Guerras de Clan <span class="sym">[combate]</span></h2></div>
+    
+    <!-- Botón Horarios (desplegable) -->
+    <div class="war-section">
+      <button class="war-toggle-btn" data-war-toggle="horarios">
+        <span class="war-icon">⏱️</span> Horarios de guerra
+        <span class="war-arrow">⧩</span>
+      </button>
+      <div class="war-panel" id="war-horarios">
+        <div class="war-time-list">
+          <div class="time-row"><span class="flag">🇵🇪</span> <strong>Perú:</strong> 5:00 PM - 9:00 PM</div>
+          <div class="time-row"><span class="flag">🇧🇴</span> <strong>Bolivia:</strong> 6:00 PM - 10:00 PM</div>
+          <div class="time-row"><span class="flag">🇨🇱</span> <strong>Chile:</strong> 6:00 PM - 10:00 PM</div>
+          <div class="time-row"><span class="flag">🇦🇷</span> <strong>Argentina:</strong> 7:00 PM - 11:00 PM</div>
+        </div>
+        <div class="war-note">//__ Días: Miércoles, Sábados y Domingos __//</div>
+      </div>
+    </div>
+
+    <!-- Botón Información Completa (desplegable) -->
+    <div class="war-section">
+      <button class="war-toggle-btn" data-war-toggle="info">
+        <span class="war-icon">📜</span> Información completa sobre guerra
+        <span class="war-arrow">⧩</span>
+      </button>
+      <div class="war-panel" id="war-info">
+        <div class="war-text-content">
+          <p><strong>⚔️ ¿Cómo funcionan las guerras de clan en Starry Sky?</strong></p>
+          <p>Las guerras de clan son eventos de 3 veces por semana donde competimos contra otros clanes para ganar placas y puntos de honor. La participación es <strong>obligatoria</strong> para mantener la actividad y el espíritu competitivo.</p>
+          
+          <p><strong>📌 Reglas básicas:</strong></p>
+          <ul>
+            <li>✓ Cada miembro debe acumular <strong>mínimo 50 puntos semanales</strong> en guerras.
+            <li>! aún estamos mejorando el servidor.. 
+          <p><strong>📢 Estrategias recomendadas:</strong> Coordinarse por el grupo de WhatsApp, rotar roles (francotirador, apoyo, asalto) y nunca rendirse. ¡Cada partida suma!</p>
+          
+          <p class="war-footer-msg">// Para dudas, contacta al Colider o Líder //</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNIRSE -->
   <section class="view" id="view-unirse">
     <div class="s-head" style="margin-top:.8rem"><h2>Requisitos <span class="sym">[ingreso]</span></h2></div>
     <div class="req-box">
@@ -228,6 +268,9 @@
   <button class="tab-btn" data-view="galeria">
     <span class="t-icon">&#9055;</span><span class="t-label">Galeria</span>
   </button>
+  <button class="tab-btn" data-view="guerras">
+    <span class="t-icon">⚔</span><span class="t-label">Guerras</span>
+  </button>
   <button class="tab-btn" data-view="unirse">
     <span class="t-icon">&#9733;</span><span class="t-label">Unirse</span>
   </button>
@@ -240,7 +283,7 @@
 <div id="idModal" class="modal">
   <div class="modal-content">
     <span class="modal-close">&times;</span>
-    <h3>🔫 Completa tu solicitud</h3>
+    <h3>❖ Completa tu solicitud</h3>
     <p>Para unirte a <strong>Starry Sky</strong>, comparte tu ID de Free Fire. Esto nos permitirá agregarte como amigo y agilizar el proceso.</p>
     <input type="text" id="ffIdInput" placeholder="Ej: 1234567890" maxlength="15">
     <div class="modal-buttons">
@@ -251,7 +294,6 @@
   </div>
 </div>
 
-<!-- JAVASCRIPT EXTERNO -->
 <script src="script.js"></script>
 </body>
 </html>
