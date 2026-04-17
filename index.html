@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<base href="./">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0f0501">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Starry Sky">
+<title>Starry Sky | Free Fire</title>
+
+<!-- Iconos -->
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+<!-- Fuentes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="stars-bg" aria-hidden="true"></div>
+
+<header class="navbar">
+  <div class="logo-area">
+    <div class="nav-emblem">
+      <img class="logo-filter" src="assets/logo.png" alt="Starry Sky Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+      <span style="display:none;">&#10022;</span>
+    </div>
+    <div>
+      <div class="nav-title">STARRY SKY</div>
+      <div class="nav-sub">Free Fire &bull; Clan Elite</div>
+    </div>
+  </div>
+  <button class="theme-btn" id="themeBtn">
+    <span>🎨</span> Tema
+  </button>
+  <div class="theme-dropdown" id="themeDropdown">
+    <button class="theme-opt" data-theme="autumn"><span class="emoji">🍂</span> Autumn</button>
+    <button class="theme-opt" data-theme="sakura"><span class="emoji">🌸</span> Sakura</button>
+    <button class="theme-opt" data-theme="ember"><span class="emoji">🔥</span> Ember</button>
+    <button class="theme-opt" data-theme="frost"><span class="emoji">❄️</span> Frost</button>
+    <button class="theme-opt" data-theme="carbon"><span class="emoji">🖤</span> Carbon Black</button>
+    <button class="theme-opt" data-theme="royalCarbon"><span class="emoji">👑</span> Royal Carbon</button>
+  </div>
+</header>
+
+<div class="page">
+
+  <!-- INICIO -->
+  <section class="view active" id="view-inicio">
+    <div class="hero">
+      <div class="hero-emblem">
+        <img src="assets/logo-hero.png" alt="Starry Sky Hero" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <span style="display:none; width:100%; height:100%; align-items:center; justify-content:center;">&#10022;</span>
+      </div>
+      <div class="hero-super">Free Fire &mdash; Clan Elite</div>
+      <h1>STARRY SKY</h1>
+      <div class="hero-line"></div>
+      <div class="hero-tagline">&ldquo; Bajo el mismo cielo, invictos &rdquo;</div>
+      <div class="hero-pill">&#9670; Elite Squad &#9670;</div>
+      <div class="stats-strip">
+        <div class="stat-box"><div class="stat-val">20+</div><div class="stat-label">Miembros</div></div>
+        <div class="stat-box"><div class="stat-val">Arg</div><div class="stat-label">Region</div></div>
+        <div class="stat-box"><div class="stat-val">2.0</div><div class="stat-label">K/D Prom.</div></div>
+      </div>
+      
+      <!-- Footer exclusivo de Inicio -->
+      <div class="hero-footer">
+        <div class="footer-divider"></div>
+        <div class="footer-content">
+          <span class="footer-logo">STARRY SKY</span>
+          <span class="footer-copy-inline">&copy; Creador • ByteForge</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta de acceso a la tienda (independiente) -->
+    <div class="shop-access-card">
+      <a href="./shop/" class="shop-access-link">
+        <span class="shop-access-icon">💎</span>
+        <div class="shop-access-content">
+          <span class="shop-access-title">Shop de Diamantes</span>
+          <span class="shop-access-sub">Recargas verificadas &bull; World Sale &bull; 24/7</span>
+        </div>
+        <span class="shop-access-badge">INGRESAR</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CODIGO -->
+  <section class="view" id="view-codigo">
+    <div class="s-head" style="margin-top:.8rem"><h2>Codigo de Honor <span class="sym">[v0.2]</span></h2></div>
+    <div class="rules-card">
+      <div class="rule-row"><span class="r-sym">&#9670;</span><span><strong>Guerras</strong> &mdash; Minimo 2 participaciones semanales (en caso de emergencia avisar a lider o colider). Ausencia no justificada = falta.</span></div>
+      <div class="rule-row"><span class="r-sym">&#9670;</span><span><strong>Respeto</strong> &mdash; Cero toxicidad. Cualquier reporte evaluado por lider/colider.</span></div>
+      <div class="rule-row"><span class="r-sym">&#9670;</span><span><strong>Actividad</strong> &mdash; Inactividad >4 dias sin aviso = expulsión.</span></div>
+      <div class="rule-row"><span class="r-sym">&#9670;</span><span><strong>Comunicacion</strong> &mdash; Usar el grupo para armar equipo, mejora la experiencia.</span></div>
+      <div class="rule-row"><span class="r-sym">&#9670;</span><span><strong>Aporte</strong> &mdash; Participación diaria, cada punto de honor fortalece al clan.</span></div>
+      <div class="rule-row"><span class="r-sym">&#9670;</span><span><strong>Faltas</strong> &mdash; Máximo 3 faltas por semana (reinicia viernes).</span></div>
+    </div>
+  </section>
+
+  <!-- JERARQUIA -->
+  <section class="view" id="view-jerarquia">
+    <div class="s-head" style="margin-top:.8rem"><h2>Jerarquia <span class="sym">[estructura]</span></h2></div>
+    <div class="rank-tabs">
+      <button class="rtab active" data-rank="lider">&#9812; Lider</button>
+      <button class="rtab" data-rank="colider">&#9733; Colider</button>
+      <button class="rtab" data-rank="elite">&#9670; Decano</button>
+      <button class="rtab" data-rank="recluta">&#9675; Recluta</button>
+    </div>
+
+    <div class="rank-panel active" id="rp-lider">
+      <div class="rank-card r-leader">
+        <div class="rk-sym">&#9812;</div>
+        <div class="rk-body">
+          <h3>Lider</h3>
+          <p>Fundador y maxima autoridad. Decisiones estratégicas, manejo de alianzas.</p>
+          <div class="rk-perks">
+            <span class="perk">Alianzas</span><span class="perk">Decision final</span><span class="perk">Reclutamiento VIP</span><span class="perk">Acceso total</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rank-panel" id="rp-colider">
+      <div class="rank-card r-elder">
+        <div class="rk-sym">&#9733;</div>
+        <div class="rk-body">
+          <h3>Colider</h3>
+          <p>Brazo derecho. Gestiona reclutamiento, coordina guerras, aplica sanciones.</p>
+          <div class="rk-perks">
+            <span class="perk">Reclutamiento</span><span class="perk">Sanciones</span><span class="perk">Coord. guerras</span><span class="perk">Gestion interna</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rank-panel" id="rp-elite">
+      <div class="rank-card r-elite">
+        <div class="rk-sym">&#9670;</div>
+        <div class="rk-body">
+          <h3>Decano</h3>
+          <p>Núcleo del clan. Participan en guerras, proponen estrategias y mentorían.</p>
+          <div class="rk-perks">
+            <span class="perk">Guerras prioritarias</span><span class="perk">Voto en decisiones</span><span class="perk">Mentor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rank-panel" id="rp-recluta">
+      <div class="rank-card r-recruit">
+        <div class="rk-sym">&#9675;</div>
+        <div class="rk-body">
+          <h3>Recluta</h3>
+          <p>Periodo de prueba de 1 semana. Demostrar habilidad, actitud y compromiso.</p>
+          <div class="rk-perks">
+            <span class="perk">Prueba: 7 dias</span><span class="perk">Participacion limitada</span><span class="perk">Evaluacion</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUERRAS -->
+  <section class="view" id="view-guerras">
+    <div class="s-head" style="margin-top:.8rem"><h2>Guerras de Clan <span class="sym">[combate]</span></h2></div>
+    
+    <div class="war-countdown-container" id="warCountdownContainer">
+      <div class="war-status-badge" id="warStatusBadge">⚔️ PRÓXIMA GUERRA ⚔️</div>
+      <div class="war-timer" id="warTimer">00d 00h 00m</div>
+      <div class="war-next-info" id="warNextInfo">Próxima guerra en</div>
+    </div>
+
+    <div class="war-section">
+      <button class="war-toggle-btn" data-war-toggle="horarios">
+        <span class="war-icon">⏱️</span> Horarios de guerra
+        <span class="war-arrow">⧩</span>
+      </button>
+      <div class="war-panel" id="war-horarios">
+        <div class="war-time-list">
+          <div class="time-row"><span class="flag">🇵🇪</span> <strong>Perú:</strong> 5:00 PM - 9:00 PM</div>
+          <div class="time-row"><span class="flag">🇧🇴</span> <strong>Bolivia:</strong> 6:00 PM - 10:00 PM</div>
+          <div class="time-row"><span class="flag">🇨🇱</span> <strong>Chile:</strong> 6:00 PM - 10:00 PM</div>
+          <div class="time-row"><span class="flag">🇦🇷</span> <strong>Argentina:</strong> 7:00 PM - 11:00 PM</div>
+        </div>
+        <div class="war-note">//__ Días: Miércoles, Sábados y Domingos __//</div>
+      </div>
+    </div>
+
+    <div class="war-section">
+      <button class="war-toggle-btn" data-war-toggle="info">
+        <span class="war-icon">📜</span> Información completa sobre guerra
+        <span class="war-arrow">⧩</span>
+      </button>
+      <div class="war-panel" id="war-info">
+        <div class="war-text-content">
+          <p><strong>⚔️ ¿Cómo funcionan las guerras de clan en Starry Sky?</strong></p>
+          <p>Las guerras de clan son eventos de 3 veces por semana donde competimos contra otros clanes para ganar placas y puntos de honor. La participación es <strong>obligatoria</strong> para mantener la actividad y el espíritu competitivo.</p>
+          <p><strong>📌 Reglas básicas:</strong></p>
+          <ul>
+            <li>✓ Cada miembro debe acumular <strong>mínimo 50 puntos semanales</strong> en guerras.
+            <li>! aún estamos mejorando el servidor.. 
+          <p><strong>📢 Estrategias recomendadas:</strong> Coordinarse por el grupo de WhatsApp, rotar roles (francotirador, apoyo, asalto) y nunca rendirse. ¡Cada partida suma!</p>
+          <p class="war-footer-msg">// Para dudas, contacta al Colider o Líder //</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNIRSE -->
+  <section class="view" id="view-unirse">
+    <div class="s-head" style="margin-top:.8rem"><h2>Requisitos <span class="sym">[ingreso]</span></h2></div>
+    <div class="req-box">
+      <div class="req-title-sm">Nivel minimo requerido</div>
+      <div class="req-badge">LVL 45+</div>
+      <div class="req-divider"></div>
+      <div class="req-list">
+        <div class="req-row"><span class="sym">&gt;&gt;</span><span><strong>Rango</strong> &mdash; Heroico o Diamante en BR (última temporada)</span></div>
+        <div class="req-row"><span class="sym">&gt;&gt;</span><span><strong>K/D</strong> &mdash; Mayor a 2.0 (BR), opcional pero valorado</span></div>
+        <div class="req-row"><span class="sym">&gt;&gt;</span><span><strong>Entrevista</strong> &mdash; Muy breve, por WhatsApp</span></div>
+        <div class="req-row"><span class="sym">&gt;&gt;</span><span><strong>Actitud</strong> &mdash; Respeto, compromiso y mentalidad de equipo</span></div>
+      </div>
+    </div>
+    <div class="apply-box">
+      <p>Contactanos para iniciar tu proceso de admisión</p>
+      <div class="social-row">
+        <button class="s-btn" id="whatsappBtn"><span class="sym">[W]</span> WhatsApp</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- JUEGOS -->
+  <section class="view" id="view-juegos">
+    <div class="coming-card">
+      <span class="coming-sym">[ &#9632; ]</span>
+      <div class="coming-title">Mini Juegos</div>
+      <p class="coming-sub">Estamos preparando experiencias interactivas exclusivas para los miembros de Starry Sky. Vuelve pronto.</p>
+      <span class="badge-soon">// Proximamente</span>
+    </div>
+    <div class="games-slots">
+      <div class="game-slot">
+        <div class="game-slot-icon">&#9670;</div>
+        <div class="game-slot-info"><h4>Quiz de Estrategia</h4><p>// proximamente</p></div>
+      </div>
+      <div class="game-slot">
+        <div class="game-slot-icon">&#9651;</div>
+        <div class="game-slot-info"><h4>Ruleta de Modos</h4><p>// proximamente</p></div>
+      </div>
+      <div class="game-slot">
+        <div class="game-slot-icon">&#9733;</div>
+        <div class="game-slot-info"><h4>Clasificacion Interna</h4><p>// proximamente</p></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Navegación inferior -->
+<nav class="bottom-nav" role="navigation" aria-label="Navegacion principal">
+  <div class="sections-title">✦ SECCIONES ✦</div>
+  <div class="nav-buttons">
+    <button class="tab-btn active" data-view="inicio">
+      <span class="t-icon">&#9651;</span><span class="t-label">Inicio</span>
+    </button>
+    <button class="tab-btn" data-view="codigo">
+      <span class="t-icon">&#9670;</span><span class="t-label">Codigo</span>
+    </button>
+    <button class="tab-btn" data-view="jerarquia">
+      <span class="t-icon">&#9812;</span><span class="t-label">Rangos</span>
+    </button>
+    <button class="tab-btn" data-view="guerras" id="warTabBtn">
+      <span class="t-icon">⚔</span><span class="t-label">Guerras</span>
+    </button>
+    <button class="tab-btn" data-view="unirse">
+      <span class="t-icon">&#9733;</span><span class="t-label">Unirse</span>
+    </button>
+    <button class="tab-btn" data-view="juegos">
+      <span class="t-icon">&#10023;</span><span class="t-label">Juegos</span>
+    </button>
+  </div>
+</nav>
+
+<div id="idModal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h3>❖ Completa tu solicitud</h3>
+    <p>Para unirte a <strong>Starry Sky</strong>, comparte tu ID de Free Fire. Esto nos permitirá agregarte como amigo y agilizar el proceso.</p>
+    <input type="text" id="ffIdInput" placeholder="Ej: 1234567890" maxlength="15">
+    <div class="modal-buttons">
+      <button id="modalCancel" class="modal-btn cancel">Cancelar</button>
+      <button id="modalContinue" class="modal-btn continue" disabled>Continuar a WhatsApp</button>
+    </div>
+    <p class="modal-note">Tu ID será incluido en el mensaje de WhatsApp. Mínimo 10 caracteres.</p>
+  </div>
+</div>
+
+<script src="./script.js"></script>
+</body>
+</html>
