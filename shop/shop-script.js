@@ -113,7 +113,7 @@
     }));
   }
 
-  const WA_NUMBER = "+591 62768726"; // Reemplazar con número real
+  const WA_NUMBER = "59162768726"; // Reemplazar con número real
 
   // ================== CONTACTO ==================
   function setupContact() {
