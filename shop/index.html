@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<base href="./">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0f0501">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Starry Store">
+<title>Starry Store | Diamantes Free Fire</title>
+
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="shop-style.css">
+</head>
+<body>
+
+<div class="stars-bg" aria-hidden="true"></div>
+
+<header class="navbar shop-navbar">
+  <div class="logo-area">
+    <a href="../" class="back-link premium-back">
+      <svg class="back-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      <span class="back-text">Volver al Clan</span>
+    </a>
+    <div class="shop-brand">
+      <svg class="shop-brand-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 2L2 9l10 13 10-13-10-7z" fill="var(--v3)" stroke="var(--v2)"/>
+        <path d="M12 22V12m0-10L2 9m10-7l10 7" stroke="var(--v2)" stroke-width="1.2"/>
+      </svg>
+      <span class="shop-brand-title">STAR STORE</span>
+    </div>
+  </div>
+</header>
+
+<div class="shop-layout">
+  <aside class="shop-sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">🌎 País</div>
+      <div class="country-selector-vertical">
+        <button class="country-btn-vertical" id="countryBtnVertical">
+          <span id="currentFlagVertical">🇧🇴</span>
+          <span id="currentCurrencyVertical">BOB</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="country-dropdown-vertical" id="countryDropdownVertical">
+          <button class="country-opt-vertical" data-country="BO" data-flag="🇧🇴" data-currency="BOB">🇧🇴 Bolivia (Bs)</button>
+          <button class="country-opt-vertical" data-country="AR" data-flag="🇦🇷" data-currency="ARS">🇦🇷 Argentina (Consultar)</button>
+          <button class="country-opt-vertical" data-country="CL" data-flag="🇨🇱" data-currency="CLP">🇨🇱 Chile (Consultar)</button>
+          <button class="country-opt-vertical" data-country="PE" data-flag="🇵🇪" data-currency="PEN">🇵🇪 Perú (Consultar)</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">🎨 Tema</div>
+      <button class="theme-btn-vertical" id="themeBtnVertical">
+        <span>🎨</span> Cambiar
+      </button>
+      <div class="theme-dropdown-vertical" id="themeDropdownVertical">
+        <button class="theme-opt-vertical" data-theme="autumn">🍂 Autumn</button>
+        <button class="theme-opt-vertical" data-theme="sakura">🌸 Sakura</button>
+        <button class="theme-opt-vertical" data-theme="ember">🔥 Ember</button>
+        <button class="theme-opt-vertical" data-theme="frost">❄️ Frost</button>
+        <button class="theme-opt-vertical" data-theme="carbon">🖤 Carbon Black</button>
+        <button class="theme-opt-vertical" data-theme="royalCarbon">👑 Royal Carbon</button>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">📦 Categorías</div>
+      <div class="category-menu-vertical">
+        <button class="category-chip-vertical active" data-category="diamonds">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 15 9 22 9 16 14 19 22 12 17 5 22 8 14 2 9 9 9 12 2"></polygon></svg>
+          Diamantes
+        </button>
+        <button class="category-chip-vertical" data-category="cards">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="4" width="20" height="16" rx="2"></rect><line x1="8" y1="10" x2="16" y2="10"></line></svg>
+          Tarjetas
+        </button>
+        <button class="category-chip-vertical" data-category="passes">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 15 9 22 9 16 14 19 22 12 17 5 22 8 14 2 9 9 9 12 2"></polygon></svg>
+          Pases
+        </button>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">📞 Contacto</div>
+      <button class="contact-btn-vertical" id="contactBtnVertical">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+        </svg>
+        <span>Consultar por WhatsApp</span>
+      </button>
+    </div>
+  </aside>
+
+  <main class="shop-main">
+    <section class="shop-hero">
+      <h1 class="shop-hero-title">Diamantes <span class="highlight">Seguros</span></h1>
+      <p class="shop-hero-sub">Recargas verificadas • Entrega inmediata • World Sale</p>
+      <div class="shop-trust-badges">
+        <span class="trust-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          Pago seguro
+        </span>
+        <span class="trust-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          Entrega 5-15 min
+        </span>
+        <span class="trust-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+          24/7
+        </span>
+      </div>
+    </section>
+
+    <section class="products-section">
+      <h2 class="section-title" id="categoryTitle">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 15 9 22 9 16 14 19 22 12 17 5 22 8 14 2 9 9 9 12 2"></polygon></svg>
+        <span>Paquetes de Diamantes</span>
+      </h2>
+      <div class="products-grid" id="productsGrid"></div>
+    </section>
+
+    <section class="how-to-buy" id="como-comprar">
+      <h2 class="section-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+        ¿Cómo comprar?
+      </h2>
+      <div class="steps-container">
+        <div class="step-card"><div class="step-number">1</div><h4>Elige</h4><p>Tu pack</p></div>
+        <div class="step-card"><div class="step-number">2</div><h4>ID</h4><p>Tu ID FF</p></div>
+        <div class="step-card"><div class="step-number">3</div><h4>Paga</h4><p>Seguro</p></div>
+        <div class="step-card"><div class="step-number">4</div><h4>Recibe</h4><p>Tus 💎</p></div>
+      </div>
+    </section>
+
+    <footer class="shop-footer">
+      <div class="footer-logo">💎 STAR STORE</div>
+      <div class="footer-copy">&copy; 2026 • Diamantes verificados • World Sale</div>
+    </footer>
+  </main>
+</div>
+
+<!-- MODAL PARA ID (igual que en el clan) -->
+<div id="idModal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h3>❖ Completa tu solicitud</h3>
+    <p>Para continuar con la compra, ingresa tu <strong>ID de Free Fire</strong>.</p>
+    <input type="text" id="ffIdInput" placeholder="Ej: 1234567890" maxlength="15">
+    <div class="modal-buttons">
+      <button id="modalCancel" class="modal-btn cancel">Cancelar</button>
+      <button id="modalContinue" class="modal-btn continue" disabled>Continuar a WhatsApp</button>
+    </div>
+    <p class="modal-note">Tu ID será incluido en el mensaje. Mínimo 10 caracteres.</p>
+  </div>
+</div>
+
+<script src="shop-script.js"></script>
+</body>
+</html>
